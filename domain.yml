@@ -1,0 +1,73 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- inform_number_situps
+- feedback_lower_back_question
+- start
+- thanks
+- torso:
+    triggers: action_torso
+- complete
+
+entities:
+- number
+- torso
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/oiuhfTS.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_situps_number:
+  - text: Hi! Welcome to the Personal Trainer Assistant, I am here to guide you
+      through your situps and find an appropriate routine. Just to set the goals,
+      how many situps would you like to do in our first session?
+  utter_situps_description:
+  - text: Great, Lets start! Some guidelines, to do a situp, lie on your back, bend
+      your knees and with your hands behind your head, raise your torso. Then return
+      to the starting position.
+    image: https://i.imgur.com/oiuhfTS.jpg
+  utter_feedback_lower_back:
+  - text: Note that keeping your lower back pressed into the floor, it will reduce
+      the strain on it.
+  utter_feedback_affirmative:
+  - text: It looks much better now. Carry on the good job!
+  utter_feedback_progress:
+  - text: I notice that you put a lot of effort when doing the situps. Would you prefer
+      a lighter cycle perhaps?
+  utter_feedback_progress_affirmative:
+  - text: Alrighty! Lets do three instead of five situps then!
+  utter_feedback_progress_negative:
+  - text: Excellent, lets carry one with another two to finish this cycle!
+  utter_metrics:
+  - text: Good job. You 've completed 80% of the desired goal with 65% of it performed properly. 
+   
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_situps_number
+- utter_situps_description
+- utter_feedback_lower_back
+- utter_feedback_affirmative
+- utter_feedback_progress
+- utter_feedback_progress_affirmative
+- utter_feedback_progress_negative
+- utter_metrics
+- action_torso
